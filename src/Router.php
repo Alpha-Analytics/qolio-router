@@ -1,10 +1,10 @@
 <?php
-namespace Introvert\Apihub\Router;
+namespace Qolio\Apihub\Router;
 
-use Introvert\Apihub\Router\Default\Controller;
-use Introvert\Apihub\Router\Exception\RouterException;
-use Introvert\Apihub\Router\Interface\IAuth;
-use Introvert\Apihub\Router\Interface\IResponse;
+use Qolio\Apihub\Router\Default\Controller;
+use Qolio\Apihub\Router\Exception\RouterException;
+use Qolio\Apihub\Router\Interface\IAuth;
+use Qolio\Apihub\Router\Interface\IResponse;
 use Throwable;
 
 abstract class Router {

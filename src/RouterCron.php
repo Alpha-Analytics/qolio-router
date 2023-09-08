@@ -1,7 +1,7 @@
 <?php
-namespace Introvert\Apihub\Router;
+namespace Qolio\Apihub\Router;
 
-use Introvert\Apihub\Router\Exception\RouterException;
+use Qolio\Apihub\Router\Exception\RouterException;
 
 class RouterCron extends Router {
 

@@ -1,5 +1,5 @@
 <?php
-namespace Introvert\Apihub\Router\Exception;
+namespace Qolio\Apihub\Router\Exception;
 
 use Exception;
 

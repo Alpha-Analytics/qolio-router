@@ -1,5 +1,5 @@
 <?php
-namespace Introvert\Apihub\Router;
+namespace Qolio\Apihub\Router;
 
 class RouterWeb extends Router {
 

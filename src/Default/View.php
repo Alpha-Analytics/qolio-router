@@ -1,7 +1,7 @@
 <?php
-namespace Introvert\Apihub\Router\Default;
+namespace Qolio\Apihub\Router\Default;
 
-use Introvert\Apihub\Router\Interface\IResponse;
+use Qolio\Apihub\Router\Interface\IResponse;
 use Throwable;
 
 class View implements IResponse {
