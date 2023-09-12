@@ -7,7 +7,7 @@ use Throwable;
 
 class Controller {
 	public function routerException(RouterException $e): IResponse {
-		return new View('Not Found', 404);
+		return new View($e , 404);
 	}
 
 	public function serverError(Throwable $e): IResponse {
