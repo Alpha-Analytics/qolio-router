@@ -11,6 +11,6 @@ class Controller {
 	}
 
 	public function serverError(Throwable $e): IResponse {
-		return new View('Internal Server Error', 500);
+		return new View($e, 500);
 	}
 }
