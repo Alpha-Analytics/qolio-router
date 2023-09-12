@@ -50,7 +50,6 @@ abstract class Router {
 			
 			if (isset($partController)) {
 				$controller .= $this->defineName($partController) . 'Controller';
-				throw new RouterException($controller, 4);
 				if (class_exists($controller)) {
 					$method = 'action' . $this->defineName($partMethod);
 					if (method_exists($controller, $method)) {
