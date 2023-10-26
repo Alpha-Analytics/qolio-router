@@ -39,15 +39,10 @@ abstract class Router {
 	public function route(): IResponse {
 		try {
 			$urn = $this->getUrn();
-			print_r($urn);
 			$controller = $this->namespace . $this->getPathController();
-			print_r($controller);
 			$parts = $this->getParts(explode('/', substr($urn, 1)));
-			print_r($parts);
 			$partController = $parts[2] ?? null;
-			print_r($partController);
 			$partMethod = $parts[3] ?? '';
-			print_r($partMethod);
 
 			if (preg_match('#^(\/([a-z0-9])[a-z0-9_]*([a-z0-9]))+$#', $urn) == 0) {
 				throw new RouterException("Urn is wrong: $urn", 2);
@@ -55,29 +50,22 @@ abstract class Router {
 			
 			if (isset($partController)) {
 				$controller .= $this->defineName($partController) . 'Controller';
-				print_r($controller);
 				if (class_exists($controller)) {
 					$method = 'action' . $this->defineName($partMethod);
-					print_r($method);
 					if (method_exists($controller, $method)) {
-						print_r('run');
 						return $this->runAuth() ?? (new $controller)->$method();
 					} else {
-						print_r('no_method');
 						throw new RouterException("There is no method in controller: $controller $method", 5);
 					}
 				} else {
-					print_r('No controller');
 					throw new RouterException("There is no controller: $controller", 4);
 				}
 			} else {
 				throw new RouterException("There is no controller name: $urn", 3);
 			}
 		} catch (RouterException $e) {
-			print_r('catch1');
 			return (new Controller)->routerException($e);
 		} catch (Throwable $e) {
-			print_r('catch2');
 			return (new Controller)->serverError($e);
 		}
 	}
