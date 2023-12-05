@@ -5,6 +5,7 @@ class RouterWeb extends Router {
 
 	protected function getUrn(): string
 	{
+		file_put_contents('php://stdout', "HTTP_X_REQUEST_URI: " . $_SERVER['HTTP_X_REQUEST_URI'] . PHP_EOL);
 		return rtrim(parse_url($_SERVER['HTTP_X_REQUEST_URI'], PHP_URL_PATH), '/');
 	}
 
