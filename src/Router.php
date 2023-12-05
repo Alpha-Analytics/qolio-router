@@ -39,8 +39,11 @@ abstract class Router {
 	public function route(): IResponse {
 		try {
 			$urn = $this->getUrn();
+			file_put_contents('php://stdout', $urn . PHP_EOL);
 			$controller = $this->namespace . $this->getPathController();
+			file_put_contents('php://stdout', $controller . PHP_EOL);
 			$parts = $this->getParts(explode('/', substr($urn, 1)));
+			file_put_contents('php://stdout', json_encode($parts) . PHP_EOL);
 			$partController = $parts[2] ?? null;
 			$partMethod = $parts[3] ?? '';
 
