@@ -1,0 +1,36 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "c10b1494ceef5e5511afe56f6624759a",
+    "packages": [
+        {
+            "name": "alpha-analytics/qolio-logger",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Alpha-Analytics/qolio-logger.git",
+                "reference": "main"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Qolio\\Helper\\": "src"
+                }
+            }
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "alpha-analytics/qolio-logger": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.2.0"
+}

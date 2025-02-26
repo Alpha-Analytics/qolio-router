@@ -2,8 +2,15 @@
 namespace Qolio\Apihub\Router;
 
 use Qolio\Apihub\Router\Exception\RouterException;
+use Qolio\Helper\Logger;
 
 class RouterCron extends Router {
+    public function __construct(string $namespace)
+    {
+        Logger::init('cron');
+
+        parent::__construct($namespace);
+    }
 
 	protected function getUrn(): string
 	{

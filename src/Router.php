@@ -1,10 +1,13 @@
 <?php
 namespace Qolio\Apihub\Router;
 
+require_once '../vendor/autoload.php';
+
 use Qolio\Apihub\Router\Default\Controller;
 use Qolio\Apihub\Router\Exception\RouterException;
 use Qolio\Apihub\Router\Interface\IAuth;
 use Qolio\Apihub\Router\Interface\IResponse;
+use Qolio\Helper\Logger;
 use Throwable;
 
 abstract class Router {
@@ -39,11 +42,11 @@ abstract class Router {
 	public function route(): IResponse {
 		try {
 			$urn = $this->getUrn();
-			file_put_contents('php://stdout', "urn: $urn" . PHP_EOL);
+            Logger::log("urn: $urn");
 			$controller = $this->namespace . $this->getPathController();
-			file_put_contents('php://stdout', "controller: $controller" . PHP_EOL);
+            Logger::log("controller: $controller");
 			$parts = $this->getParts(explode('/', substr($urn, 1)));
-			file_put_contents('php://stdout', "parts: " . json_encode($parts) . PHP_EOL);
+            Logger::log("parts: " . json_encode($parts));
 			$partController = $parts[2] ?? null;
 			$partMethod = $parts[3] ?? '';
 

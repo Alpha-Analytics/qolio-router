@@ -1,11 +1,20 @@
 <?php
 namespace Qolio\Apihub\Router;
 
+use Qolio\Helper\Logger;
+
 class RouterWeb extends Router {
 
-	protected function getUrn(): string
+    public function __construct(string $namespace)
+    {
+        Logger::init('web');
+
+        parent::__construct($namespace);
+    }
+
+    protected function getUrn(): string
 	{
-		file_put_contents('php://stdout', "HTTP_X_REQUEST_URI: " . $_SERVER['HTTP_X_REQUEST_URI'] . PHP_EOL);
+        Logger::log('HTTP_X_REQUEST_URI: ' . $_SERVER['HTTP_X_REQUEST_URI']);
 		return rtrim(parse_url($_SERVER['HTTP_X_REQUEST_URI'], PHP_URL_PATH), '/');
 	}
 

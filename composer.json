@@ -1,0 +1,26 @@
+{
+  "name": "alpha-analytics/qolio-router",
+  "type": "library",
+  "repositories": [
+    {
+      "type":"package",
+      "package": {
+        "name": "alpha-analytics/qolio-logger",
+        "version":"dev-master",
+        "source": {
+          "url": "https://github.com/Alpha-Analytics/qolio-logger.git",
+          "type": "git",
+          "reference":"main"
+        },
+        "autoload": {
+          "psr-4": {
+            "Qolio\\Helper\\": "src"
+          }
+        }
+      }
+    }
+  ],
+  "require": {
+    "alpha-analytics/qolio-logger": "dev-master"
+  }
+}
