@@ -1,8 +1,6 @@
 <?php
 namespace Qolio\Apihub\Router;
 
-require_once '../vendor/autoload.php';
-
 use Qolio\Apihub\Router\Default\Controller;
 use Qolio\Apihub\Router\Exception\RouterException;
 use Qolio\Apihub\Router\Interface\IAuth;
